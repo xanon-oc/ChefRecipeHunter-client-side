@@ -1,5 +1,5 @@
-import React from "react";
 import logo from "../../public/default-monochrome.svg";
+import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <header aria-label="Site Header" className="bg-white">
@@ -9,6 +9,10 @@ const Header = () => {
             <a className="" href="/">
               <img src={logo} className="w-[50%]" alt="" />
             </a>
+          </div>
+
+          <div className="hidden md:block">
+            {" "}
             <nav aria-label="Site Nav">
               <ul className="flex items-center gap-6 text-sm">
                 <li>
@@ -40,8 +44,6 @@ const Header = () => {
             </nav>
           </div>
 
-          <div className="hidden md:block"></div>
-
           <div className="flex items-center gap-4">
             <div className="sm:flex sm:gap-4">
               <div className="hidden sm:flex items-center gap-8">
@@ -60,19 +62,19 @@ const Header = () => {
                   />
                 </svg>
 
-                <a
+                <Link
                   className="rounded-full bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600"
-                  href="/"
+                  to="/login"
                 >
                   Sign In
-                </a>
+                </Link>
               </div>
-              <a
+              <Link
                 className="rounded-full bg-[#EB4A36] px-5 py-2.5 text-sm font-medium text-white shadow"
-                href="/"
+                to="/signUp"
               >
                 Sign Up
-              </a>
+              </Link>
             </div>
 
             <div className="block md:hidden">
