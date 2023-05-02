@@ -1,12 +1,14 @@
-import React from "react";
-
 const Blogs = () => {
   return (
     <div className="w-4/5 mb-20 mx-auto text-start">
       <div className="mt-10">
-        <h2 className="text-center mb-8 font-extrabold text-5xl">
-          Questions and answers
+        <p className="p-2 text-sm font-medium tracking-wider text-center uppercase">
+          How it works
+        </p>
+        <h2 className="mb-12 text-4xl font-bold leading-none text-center sm:text-5xl">
+          questions and answers
         </h2>
+
         <h2 className="text-lg font-bold">
           Differences between
           <span className="animate-text bg-gradient-to-r ml-1 from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-transparent text-lg font-black">

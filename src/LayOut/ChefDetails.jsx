@@ -41,11 +41,11 @@ const ChefDetails = () => {
                     alt=""
                   />
                 </div>
-                <div className="mt-4 w-1/2 flex flex-col mx-auto">
+                <div className="mt-4 md:w-1/2 lg:w-1/2 w-[80%] flex flex-col mx-auto ">
                   <h2 className="uppercase animate-text bg-gradient-to-r from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-3xl font-black text-transparent mb-4">
                     {name}
                   </h2>
-                  <p className="text-sm text-[#757575]">
+                  <p className="text-sm text-justify lg:text-center md:text-center text-[#757575]">
                     Hi there! My name is
                     <span className="ml-1 mr-1 uppercase animate-text bg-gradient-to-r from-teal-500 via-purple-500 to-orange-500 bg-clip-text  font-black text-transparent">
                       {name}

@@ -1,13 +1,14 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import logo from "../../public/default-monochrome.svg";
 import "react-tooltip/dist/react-tooltip.css";
 import { Tooltip } from "react-tooltip";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../AuthProviders/AuthProvider";
+import SMNavBar from "../Components/SMNavBar";
 
 const Header = () => {
   const { user, logOut, pic } = useContext(AuthContext);
-
+  const [visible, setVisible] = useState(false);
   const handleLogOut = () => {
     logOut()
       .then(() => {
@@ -16,6 +17,11 @@ const Header = () => {
       .catch((error) => {
         // An error happened.
       });
+  };
+
+  const navHandler = () => {
+    setVisible(!visible);
+    console.log("Hi");
   };
 
   return (
@@ -132,7 +138,7 @@ const Header = () => {
                     </button>
                   </div>
                 ) : (
-                  <div className="flex items-center gap-4">
+                  <div className="lg:flex md:flex items-center gap-4 hidden">
                     <div className="hidden sm:flex items-center gap-8">
                       <Link
                         className="rounded-full bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600"
@@ -155,7 +161,10 @@ const Header = () => {
             </div>
 
             <div className="block md:hidden">
-              <button className="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75">
+              <button
+                onClick={() => navHandler()}
+                className="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5"
@@ -174,6 +183,9 @@ const Header = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className={`${visible === true ? "visible" : "hidden"}`}>
+        <SMNavBar />
       </div>
     </header>
   );

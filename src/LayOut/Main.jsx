@@ -5,7 +5,7 @@ import Footer from "../Shared/Footer";
 const Main = () => {
   const navigation = useNavigation();
   return (
-    <div className="relative">
+    <div>
       <div className="sticky top-0">
         <Header />
       </div>

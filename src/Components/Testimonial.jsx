@@ -63,7 +63,7 @@ const Testimonial = () => {
                   </div>
 
                   <p className="mt-1 text-lg font-medium text-gray-700">
-                    Hinata
+                    Bedika Roy
                   </p>
                 </div>
               </div>
@@ -127,7 +127,7 @@ const Testimonial = () => {
                   </div>
 
                   <p className="mt-1 text-lg font-medium text-gray-700">
-                    Steve Jobs
+                    Nil Sharma
                   </p>
                 </div>
               </div>
@@ -190,7 +190,7 @@ const Testimonial = () => {
                   </div>
 
                   <p className="mt-1 text-lg font-medium text-gray-700">
-                    Paul Star
+                    Zakir Khan
                   </p>
                 </div>
               </div>
