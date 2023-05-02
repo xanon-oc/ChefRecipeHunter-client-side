@@ -1,6 +1,6 @@
-import React from "react";
 import Banner from "./Banner";
 import ChefSection from "./ChefSection";
+import Gallery from "./Gallery";
 
 const Home = () => {
   return (
@@ -10,6 +10,9 @@ const Home = () => {
       </div>
       <div className="w-[83%] mx-auto ">
         <ChefSection />
+      </div>
+      <div className="w-[83%] mx-auto">
+        <Gallery />
       </div>
     </div>
   );

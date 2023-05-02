@@ -5,6 +5,7 @@ export const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
   const user = {
     displayName: "Niloy Roy",
+    photoURL: "https://i.ibb.co/r7K7Wzg/me2.png",
   };
   const authInfo = {
     user,

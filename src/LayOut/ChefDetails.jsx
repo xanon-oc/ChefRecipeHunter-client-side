@@ -16,8 +16,8 @@ const ChefDetails = () => {
     recipes,
   } = ChefDetails;
   return (
-    <div>
-      <div>
+    <div className="relative">
+      <div className="sticky top-0">
         <Header />
       </div>
       <div>
@@ -125,7 +125,7 @@ const ChefDetails = () => {
         Recipes
       </h2>
 
-      <div className="w-[83%] mx-auto grid grid-cols-3 gap-8">
+      <div className="w-[83%] mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {recipes.map((dish) => (
           <RecipeCard key={dish.id} dish={dish} />
         ))}

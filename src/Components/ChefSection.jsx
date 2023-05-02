@@ -13,7 +13,7 @@ const ChefSection = () => {
       <h2 className="text-center mb-2 font-extrabold text-5xl">
         Meet Our Chefs
       </h2>
-      <div className="grid grid-cols-3 gap-8 mt-20">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-20">
         {chefData.map((cDetails) => (
           <article
             key={cDetails.id}

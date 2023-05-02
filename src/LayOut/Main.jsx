@@ -4,8 +4,10 @@ import Footer from "../Shared/Footer";
 
 const Main = () => {
   return (
-    <div>
-      <Header />
+    <div className="relative">
+      <div className="sticky top-0">
+        <Header />
+      </div>
       <Outlet />
       <Footer />
     </div>
