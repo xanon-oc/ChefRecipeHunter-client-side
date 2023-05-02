@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const ChefSection = () => {
   const [chefData, setChefData] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/all")
+    fetch("https://dish-dash-server-xanon-oc.vercel.app/all")
       .then((res) => res.json())
       .then((data) => setChefData(data));
   }, []);

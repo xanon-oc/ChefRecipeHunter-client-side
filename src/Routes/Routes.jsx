@@ -6,11 +6,13 @@ import SignUp from "../Components/SignUp";
 import ChefDetails from "../LayOut/ChefDetails";
 import Blogs from "../Components/Blogs";
 import Contact from "../Components/Contact";
+import ErrorShow from "../Components/ErrorShow";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main />,
+    errorElement: <ErrorShow />,
     children: [
       {
         path: "/",
@@ -37,8 +39,11 @@ const router = createBrowserRouter([
   {
     path: "/chef_Details/:id",
     element: <ChefDetails />,
+    errorElement: <ErrorShow />,
     loader: ({ params }) =>
-      fetch(`http://localhost:5000/chef_Details/${params.id}`),
+      fetch(
+        `https://dish-dash-server-xanon-oc.vercel.app/chef_Details/${params.id}`
+      ),
   },
 ]);
 export default router;

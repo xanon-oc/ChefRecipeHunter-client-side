@@ -5,7 +5,7 @@ const Blogs = () => {
     <div className="w-4/5 mb-20 mx-auto text-start">
       <div className="mt-10">
         <h2 className="text-center mb-8 font-extrabold text-5xl">
-          Meet Our Chefs
+          Questions and answers
         </h2>
         <h2 className="text-lg font-bold">
           Differences between
