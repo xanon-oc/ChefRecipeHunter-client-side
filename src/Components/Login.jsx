@@ -1,8 +1,27 @@
 import { Link, useNavigate } from "react-router-dom";
 import ThirdPartyAuth from "./ThirdPartyAuth";
+import { useContext } from "react";
+import { AuthContext } from "../AuthProviders/AuthProvider";
 
 const Login = () => {
+  const { signIn, setUser } = useContext(AuthContext);
   const navigation = useNavigate();
+  const handleLogin = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(email, password);
+
+    signIn(email, password)
+      .then((result) => {
+        const loggedUser = result.user;
+        setUser(loggedUser);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <div>
       {navigation.state === "loading" ? (
@@ -17,7 +36,7 @@ const Login = () => {
       ) : (
         <div>
           <div className="w-[80%] flex mx-auto justify-center mb-20 mt-8">
-            <form className="form_container">
+            <form onSubmit={handleLogin} className="form_container">
               <div className="title_container">
                 <p className="title">Login to your Account</p>
                 <span className="subtitle">
@@ -27,9 +46,7 @@ const Login = () => {
               </div>
               <br />
               <div className="input_container">
-                <label className="input_label" htmlFor="email_field">
-                  Email
-                </label>
+                <label className="input_label">Email</label>
                 <svg
                   fill="none"
                   viewBox="0 0 24 24"
@@ -54,17 +71,13 @@ const Login = () => {
                 </svg>
                 <input
                   placeholder="name@mail.com"
-                  title="Inpit title"
-                  name="input-name"
+                  name="email"
                   type="text"
                   className="input_field"
-                  id="email_field"
                 />
               </div>
               <div className="input_container">
-                <label className="input_label" htmlFor="password_field">
-                  Password
-                </label>
+                <label className="input_label">Password</label>
                 <svg
                   fill="none"
                   viewBox="0 0 24 24"
@@ -93,14 +106,12 @@ const Login = () => {
                 </svg>
                 <input
                   placeholder="Password"
-                  title="Inpit title"
-                  name="input-name"
+                  name="password"
                   type="password"
                   className="input_field"
-                  id="password_field"
                 />
               </div>
-              <button title="Sign In" type="submit" className="sign-in_btn">
+              <button className="sign-in_btn">
                 <span>Sign In</span>
               </button>
 

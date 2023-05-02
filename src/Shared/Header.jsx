@@ -4,8 +4,20 @@ import "react-tooltip/dist/react-tooltip.css";
 import { Tooltip } from "react-tooltip";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../AuthProviders/AuthProvider";
+
 const Header = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logOut, pic } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {
+        // Sign-out successful.
+      })
+      .catch((error) => {
+        // An error happened.
+      });
+  };
+
   return (
     <header aria-label="Site Header" className="bg-white">
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
@@ -74,16 +86,31 @@ const Header = () => {
                 {user ? (
                   <div className="flex gap-2 items-center">
                     <div className="flex items-center gap-4">
-                      <img
-                        data-tooltip-id="my-tooltip"
-                        data-tooltip-content={user.displayName}
-                        src={user.photoURL}
-                        className="w-10 h-10 rounded-full"
-                        alt=""
-                      />
+                      {pic === false ? (
+                        <div>
+                          <img
+                            data-tooltip-id="my-tooltip"
+                            data-tooltip-content={user.displayName}
+                            src={pic}
+                            className="w-10 h-10 rounded-full"
+                            alt=""
+                          />
+                        </div>
+                      ) : (
+                        <div>
+                          <img
+                            data-tooltip-id="my-tooltip"
+                            data-tooltip-content={user.displayName}
+                            src={user.photoURL}
+                            className="w-10 h-10 rounded-full"
+                            alt=""
+                          />
+                        </div>
+                      )}
                       <Tooltip id="my-tooltip" />
                     </div>
                     <button
+                      onClick={() => handleLogOut()}
                       data-tooltip-id="my-tooltip2"
                       data-tooltip-content="Log Out"
                     >

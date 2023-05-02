@@ -7,6 +7,7 @@ import ChefDetails from "../LayOut/ChefDetails";
 import Blogs from "../Components/Blogs";
 import Contact from "../Components/Contact";
 import ErrorShow from "../Components/ErrorShow";
+import SecureRoutes from "./secureRoutes";
 
 const router = createBrowserRouter([
   {
@@ -38,7 +39,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/chef_Details/:id",
-    element: <ChefDetails />,
+    element: (
+      <SecureRoutes>
+        <ChefDetails />
+      </SecureRoutes>
+    ),
     errorElement: <ErrorShow />,
     loader: ({ params }) =>
       fetch(
