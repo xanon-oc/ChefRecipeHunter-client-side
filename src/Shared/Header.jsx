@@ -1,5 +1,5 @@
 import logo from "../../public/default-monochrome.svg";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 const Header = () => {
   return (
     <header aria-label="Site Header" className="bg-white">
@@ -12,33 +12,32 @@ const Header = () => {
           </div>
 
           <div className="hidden md:block">
-            {" "}
             <nav aria-label="Site Nav">
               <ul className="flex items-center gap-6 text-sm">
                 <li>
-                  <a
+                  <NavLink
                     className="text-gray-500 transition hover:text-gray-500/75"
-                    href="/"
+                    to="/"
                   >
                     Home
-                  </a>
+                  </NavLink>
                 </li>
 
                 <li>
-                  <a
+                  <NavLink
                     className="text-gray-500 transition hover:text-gray-500/75"
-                    href="/"
+                    to="/blogs"
                   >
                     Blog
-                  </a>
+                  </NavLink>
                 </li>
                 <li>
-                  <a
+                  <NavLink
                     className="text-gray-500 transition hover:text-gray-500/75"
-                    href="/"
+                    to="/contact"
                   >
                     Contact
-                  </a>
+                  </NavLink>
                 </li>
               </ul>
             </nav>

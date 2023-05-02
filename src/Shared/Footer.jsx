@@ -2,65 +2,40 @@ import React from "react";
 import logo from "../../public/default-monochrome.svg";
 const Footer = () => {
   return (
-    <footer aria-label="Site Footer" className="bg-gray-100">
-      <div className="relative mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 lg:pt-24">
-        <div className="lg:flex lg:items-end lg:justify-between">
-          <div>
-            <div className="flex justify-center lg:justify-start">
-              <img src={logo} className="w-[70%]" alt="" />
-            </div>
-
-            <p className="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500 lg:text-left">
-              This recipe website is a culinary hub for food enthusiasts,
-              providing an extensive collection of recipes from around the
-              world.
-            </p>
-          </div>
-
-          <nav aria-label="Footer Nav" className="mt-12 lg:mt-0">
-            <ul className="flex flex-wrap justify-center gap-6 md:gap-8 lg:justify-end lg:gap-12">
-              <li>
-                <a
-                  className="text-gray-700 transition hover:text-gray-700/75"
-                  href="/"
-                >
-                  About
-                </a>
-              </li>
-
-              <li>
-                <a
-                  className="text-gray-700 transition hover:text-gray-700/75"
-                  href="/"
-                >
-                  Services
-                </a>
-              </li>
-
-              <li>
-                <a
-                  className="text-gray-700 transition hover:text-gray-700/75"
-                  href="/"
-                >
-                  Partners
-                </a>
-              </li>
-
-              <li>
-                <a
-                  className="text-gray-700 transition hover:text-gray-700/75"
-                  href="/"
-                >
-                  Blog
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-
-        <p className="mt-12 text-center text-sm text-gray-500 lg:text-right">
-          Copyright &copy; 2022. All rights reserved.
-        </p>
+    <footer className="bg-slate-100 rounded-lg shadow m-4 dark:bg-gray-800">
+      <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+        <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+          © 2023{" "}
+          <a
+            href="https://www.facebook.com/oneo.xan/"
+            className="hover:underline"
+          >
+            NILOY™
+          </a>
+          . All Rights Reserved.
+        </span>
+        <ul className="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+          <li>
+            <a href="#" className="mr-4 hover:underline md:mr-6 ">
+              About
+            </a>
+          </li>
+          <li>
+            <a href="#" className="mr-4 hover:underline md:mr-6">
+              Privacy Policy
+            </a>
+          </li>
+          <li>
+            <a href="#" className="mr-4 hover:underline md:mr-6">
+              Licensing
+            </a>
+          </li>
+          <li>
+            <a href="#" className="hover:underline">
+              Contact
+            </a>
+          </li>
+        </ul>
       </div>
     </footer>
   );

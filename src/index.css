@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+.active {
+  color: #eb4a36;
+}
 .form_container {
   width: fit-content;
   height: fit-content;

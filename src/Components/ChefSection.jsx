@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const ChefSection = () => {
   const [chefData, setChefData] = useState([]);
@@ -32,12 +33,7 @@ const ChefSection = () => {
               </a>
 
               <p className="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Recusandae dolores, possimus pariatur animi temporibus nesciunt
-                praesentium dolore sed nulla ipsum eveniet corporis quidem,
-                mollitia itaque minus soluta, voluptates neque explicabo tempora
-                nisi culpa eius atque dignissimos. Molestias explicabo corporis
-                voluptatem?
+                {cDetails.bio_description}
               </p>
               <p className="flex gap-4 font-medium mt-2">
                 <small>Experience : {cDetails.years_of_experience}</small>
@@ -45,8 +41,8 @@ const ChefSection = () => {
                 <small>Likes : {cDetails.likes}</small>
               </p>
 
-              <a
-                href="#"
+              <Link
+                to={`/chef_Details/${cDetails.id}`}
                 className="group mt-4 inline-flex items-center gap-1 text-sm font-medium text-blue-600"
               >
                 View Recipes
@@ -56,7 +52,7 @@ const ChefSection = () => {
                 >
                   &rarr;
                 </span>
-              </a>
+              </Link>
             </div>
           </article>
         ))}
