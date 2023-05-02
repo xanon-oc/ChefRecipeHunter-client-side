@@ -20,7 +20,7 @@ const SMNavBar = () => {
     <nav aria-label="Main Nav" className="flex flex-col ">
       <NavLink
         to="/"
-        className="flex items-center gap-2 border-s-[3px] border-blue-500 bg-blue-50 px-4 py-3 text-blue-700"
+        className="flex items-center gap-2 border-s-[3px] bg-blue-50 px-4 py-3 text-blue-700"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -125,7 +125,7 @@ const SMNavBar = () => {
                 />
               </div>
             ) : (
-              <div>
+              <div className="flex gap-2 p-4 items-center">
                 <img
                   data-tooltip-id="my-tooltip"
                   data-tooltip-content={user?.displayName}
@@ -133,31 +133,13 @@ const SMNavBar = () => {
                   className="w-10 h-10 rounded-full"
                   alt=""
                 />
+                <div>
+                  <p>{user?.displayName}</p>
+                </div>
               </div>
             )}
             <Tooltip id="my-tooltip" />
           </div>
-          <button
-            onClick={() => handleLogOut()}
-            data-tooltip-id="my-tooltip2"
-            data-tooltip-content="Log Out"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="w-3 h-3 "
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"
-              />
-            </svg>
-            <Tooltip id="my-tooltip2" />
-          </button>
         </div>
       )}
     </nav>
