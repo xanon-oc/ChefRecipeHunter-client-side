@@ -1,6 +1,7 @@
 import Banner from "./Banner";
 import ChefSection from "./ChefSection";
 import Gallery from "./Gallery";
+import Testimonial from "./Testimonial";
 
 const Home = () => {
   return (
@@ -13,6 +14,9 @@ const Home = () => {
       </div>
       <div className="w-[83%] mx-auto">
         <Gallery />
+      </div>
+      <div className="w-[83%] mx-auto">
+        <Testimonial />
       </div>
     </div>
   );
