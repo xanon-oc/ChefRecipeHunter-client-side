@@ -8,8 +8,6 @@ import SMNavBar from "../Components/SMNavBar";
 
 const Header = () => {
   const { user, logOut, pic, name } = useContext(AuthContext);
-  console.log(name);
-  console.log(pic);
   const [visible, setVisible] = useState(false);
   const handleLogOut = () => {
     logOut()
@@ -23,7 +21,6 @@ const Header = () => {
 
   const navHandler = () => {
     setVisible(!visible);
-    console.log("Hi");
   };
 
   return (

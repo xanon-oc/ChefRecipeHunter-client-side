@@ -9,7 +9,7 @@ import ThirdPartyAuth from "./ThirdPartyAuth";
 import { AuthContext } from "../AuthProviders/AuthProvider";
 
 const SignUp = () => {
-  const { createUser, setPic, setName } = useContext(AuthContext);
+  const { createUser, setPic, setName, setUser } = useContext(AuthContext);
   const location = useLocation();
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
@@ -32,10 +32,10 @@ const SignUp = () => {
       setError("Password must be  8 characters");
       return;
     }
-    console.log(name, photo, email, password);
     createUser(email, password)
       .then((result) => {
         const createdUser = result.user;
+        setUser(createUser);
         setPic(photo);
         setName(name);
         navigate(from, { replace: true });

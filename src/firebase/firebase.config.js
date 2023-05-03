@@ -4,13 +4,14 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+console.log("environment variable", import.meta.env.VITE_apiKey);
 const firebaseConfig = {
-  apiKey: "AIzaSyAieDyPY_BqjsvuvZtY-q9HYX7icLJPOuQ",
-  authDomain: "dish-dash-e401a.firebaseapp.com",
-  projectId: "dish-dash-e401a",
-  storageBucket: "dish-dash-e401a.appspot.com",
-  messagingSenderId: "844211891329",
-  appId: "1:844211891329:web:63b8b2b76ce86b382d3180",
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+  appId: import.meta.env.VITE_APPID,
 };
 
 // Initialize Firebase

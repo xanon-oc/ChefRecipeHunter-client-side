@@ -10,7 +10,6 @@ const RecipeCard = ({ dish }) => {
   // bookmark function
   const [isBookmarked, setisBookmarked] = useState(false);
   const handleBookmark = (id) => {
-    console.log(id);
     setisBookmarked(!isBookmarked);
   };
   // Toast
