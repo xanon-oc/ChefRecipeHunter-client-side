@@ -3,6 +3,7 @@ import Header from "../Shared/Header";
 import Footer from "../Shared/Footer";
 
 const Main = () => {
+  // hook
   const navigation = useNavigation();
   return (
     <div>

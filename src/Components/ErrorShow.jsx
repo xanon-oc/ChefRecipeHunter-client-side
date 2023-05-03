@@ -4,6 +4,7 @@ const ErrorShow = () => {
   return (
     <div className="grid h-screen px-4 bg-white place-content-center">
       <div className="text-center">
+        {/* i am using a svg downloaded from onlie to show error */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1024 768"

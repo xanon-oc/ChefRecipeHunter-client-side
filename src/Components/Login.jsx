@@ -9,19 +9,22 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../AuthProviders/AuthProvider";
 
 const Login = () => {
+  // states
   const { signIn, setUser } = useContext(AuthContext);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  // hook
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
   const navigation = useNavigation();
   const navigate = useNavigate();
   const handleLogin = (event) => {
+    // form
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
-
+    // sign in
     signIn(email, password)
       .then((result) => {
         const loggedUser = result.user;

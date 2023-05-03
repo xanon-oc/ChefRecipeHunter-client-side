@@ -5,18 +5,17 @@ import { Tooltip } from "react-tooltip";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../AuthProviders/AuthProvider";
 import SMNavBar from "../Components/SMNavBar";
-
+// header for md and lg devices
 const Header = () => {
-  const { user, logOut, pic, name } = useContext(AuthContext);
+  // context
+  const { user, logOut } = useContext(AuthContext);
+  // state
   const [visible, setVisible] = useState(false);
+  // log out handler
   const handleLogOut = () => {
     logOut()
-      .then(() => {
-        // Sign-out successful.
-      })
-      .catch((error) => {
-        // An error happened.
-      });
+      .then(() => {})
+      .catch(() => {});
   };
 
   const navHandler = () => {
@@ -91,33 +90,15 @@ const Header = () => {
                 {user ? (
                   <div className="flex gap-2 items-center">
                     <div className="flex items-center gap-4">
-                      {pic === false ? (
-                        <div>
-                          <img
-                            data-tooltip-id="my-tooltip"
-                            data-tooltip-content={
-                              user.displayName === "" ? (
-                                <p>{name}</p>
-                              ) : (
-                                <div>{user.displayName}</div>
-                              )
-                            }
-                            src={pic}
-                            className="w-10 h-10 rounded-full"
-                            alt=""
-                          />
-                        </div>
-                      ) : (
-                        <div>
-                          <img
-                            data-tooltip-id="my-tooltip"
-                            data-tooltip-content={user.displayName}
-                            src={user.photoURL}
-                            className="w-10 h-10 rounded-full"
-                            alt=""
-                          />
-                        </div>
-                      )}
+                      <div>
+                        <img
+                          data-tooltip-id="my-tooltip"
+                          data-tooltip-content={user.displayName}
+                          src={user.photoURL}
+                          className="w-10 h-10 rounded-full"
+                          alt=""
+                        />
+                      </div>
                       <Tooltip id="my-tooltip" />
                     </div>
                     <button

@@ -5,8 +5,10 @@ import Footer from "../Shared/Footer";
 import RecipeCard from "../Components/RecipeCard";
 import LazyLoad from "react-lazy-load";
 const ChefDetails = () => {
+  // hooks
   const navigation = useNavigation();
   const ChefDetails = useLoaderData();
+  // destructure
   const {
     name,
     picture_link,

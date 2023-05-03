@@ -3,30 +3,32 @@ import { AuthContext } from "../AuthProviders/AuthProvider";
 import { useLocation, useNavigate } from "react-router-dom";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 const ThirdPartyAuth = () => {
-  const { handleGoogleSignIn, setUser, setPic, handleGitHubSignIn } =
+  // context
+  const { handleGoogleSignIn, setUser, handleGitHubSignIn } =
     useContext(AuthContext);
+  // hooks
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
   const navigate = useNavigate();
   const signInWithGoogle = () => {
+    // sign in and sign up handler
     handleGoogleSignIn()
       .then((result) => {
         const loggedUser = result.user;
         setUser(loggedUser);
-        setPic(loggedUser.photoURL);
+        console.log(loggedUser);
         navigate(from, { replace: true });
       })
-      .catch((error) => {});
+      .catch(() => {});
   };
   const signInWithGitHub = () => {
     handleGitHubSignIn()
       .then((result) => {
         const loggedUser = result.user;
         setUser(loggedUser);
-        setPic(loggedUser.photoURL);
         navigate(from, { replace: true });
       })
-      .catch((error) => {});
+      .catch(() => {});
   };
   return (
     <div className="w-full">

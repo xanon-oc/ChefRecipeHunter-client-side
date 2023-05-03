@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import LazyLoad from "react-lazy-load";
 const ChefSection = () => {
   const [chefData, setChefData] = useState([]);
+
+  // using useEffect to get data from outside
+
   useEffect(() => {
     fetch("https://dish-dash-server-xanon-oc.vercel.app/all")
       .then((res) => res.json())

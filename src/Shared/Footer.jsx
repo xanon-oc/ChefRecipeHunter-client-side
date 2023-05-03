@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../public/default-monochrome.svg";
+// footer
 const Footer = () => {
   return (
     <footer className="bg-slate-100 rounded-lg shadow m-4 dark:bg-gray-800">

@@ -5,12 +5,17 @@ import "react-toastify/dist/ReactToastify.css";
 import LazyLoad from "react-lazy-load";
 
 const RecipeCard = ({ dish }) => {
+  // destructure
   const { recipe_name, ingredients, recipe_pic, cooking_method, rating, id } =
     dish;
+
   // bookmark function
-  const [isBookmarked, setisBookmarked] = useState(false);
+  const [isBookmarked, setIsBookmarked] = useState([]);
   const handleBookmark = (id) => {
-    setisBookmarked(!isBookmarked);
+    const findingData = isBookmarked.find((data) => data === id);
+    if (!findingData) {
+      setIsBookmarked([...isBookmarked, id]);
+    }
   };
   // Toast
   const notifySuccess = () =>
@@ -24,17 +29,7 @@ const RecipeCard = ({ dish }) => {
       progress: undefined,
       theme: "light",
     });
-  const notifyRemoved = () =>
-    toast.info("Removed from favourite..!", {
-      position: "bottom-left",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-    });
+
   return (
     <div className="">
       <article className="overflow-hidden rounded-lg shadow transition hover:shadow-lg">
@@ -58,9 +53,9 @@ const RecipeCard = ({ dish }) => {
           <p className="text-sm font-medium">ingredients :</p>
           <p className="mt-2 line-clamp-3 text-sm/relaxed text-gray-500 grid grid-cols-2">
             {ingredients.map((ingredient) => (
-              <div key={ingredient.index}>
+              <span key={ingredient.id}>
                 <li>{`${ingredient}`} .</li>
-              </div>
+              </span>
             ))}
           </p>
           <p className="mt-2 line-clamp-6 text-sm/relaxed text-gray-500">
@@ -68,9 +63,14 @@ const RecipeCard = ({ dish }) => {
             {cooking_method}
           </p>
           <hr className="mt-4 mb-2" />
-          {!isBookmarked === true ? (
-            <div onClick={notifySuccess}>
+          <div
+            onClick={
+              !isBookmarked.find((dsbl) => dsbl === id) ? notifySuccess : ""
+            }
+          >
+            {!isBookmarked.find((dsbl) => dsbl === id) ? (
               <button
+                disabled={isBookmarked.find((dsbl) => dsbl === id)}
                 onClick={() => handleBookmark(id)}
                 className="flex mx-auto mt-4"
               >
@@ -80,7 +80,7 @@ const RecipeCard = ({ dish }) => {
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className={`w-6 h-6 ${isBookmarked ? "text-red-500" : ""}`}
+                  className={`w-6 h-6 text-red-500`}
                 >
                   <path
                     strokeLinecap="round"
@@ -101,20 +101,15 @@ const RecipeCard = ({ dish }) => {
                   theme="light"
                 />
               </button>
-            </div>
-          ) : (
-            <div onClick={notifyRemoved}>
-              <button
-                onClick={() => handleBookmark(id)}
-                className="flex mx-auto mt-4"
-              >
+            ) : (
+              <button className="flex mx-auto mt-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className={`w-6 h-6 ${isBookmarked ? "text-red-500" : ""}`}
+                  className={`w-6 h-6 text-green-500`}
                 >
                   <path
                     strokeLinecap="round"
@@ -135,8 +130,8 @@ const RecipeCard = ({ dish }) => {
                   theme="light"
                 />
               </button>
-            </div>
-          )}
+            )}
+          </div>
         </div>
       </article>
     </div>

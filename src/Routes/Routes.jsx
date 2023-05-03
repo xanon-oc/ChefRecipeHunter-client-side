@@ -8,7 +8,7 @@ import Blogs from "../Components/Blogs";
 import Contact from "../Components/Contact";
 import ErrorShow from "../Components/ErrorShow";
 import SecureRoutes from "./secureRoutes";
-
+// routes
 const router = createBrowserRouter([
   {
     path: "/",

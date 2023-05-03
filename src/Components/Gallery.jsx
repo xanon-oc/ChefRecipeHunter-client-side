@@ -2,6 +2,7 @@ import LazyLoad from "react-lazy-load";
 function Gallery() {
   return (
     <div>
+      {/* this is the food gallery section */}
       <h2 className="text-center mb-14 mt-20 font-extrabold text-5xl">
         Food Gallery
       </h2>

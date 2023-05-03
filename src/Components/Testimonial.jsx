@@ -1,5 +1,5 @@
 import React from "react";
-
+// this is the reviews part
 const Testimonial = () => {
   return (
     <div className="mt-20">

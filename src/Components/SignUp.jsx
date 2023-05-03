@@ -7,15 +7,18 @@ import {
 } from "react-router-dom";
 import ThirdPartyAuth from "./ThirdPartyAuth";
 import { AuthContext } from "../AuthProviders/AuthProvider";
-
+import { getAuth, updateProfile } from "firebase/auth";
+const auth = getAuth();
 const SignUp = () => {
-  const { createUser, setPic, setName, setUser } = useContext(AuthContext);
+  // states and hooks
+  const { createUser, setUser } = useContext(AuthContext);
   const location = useLocation();
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const from = location.state?.from?.pathname || "/";
   const navigate = useNavigate();
   const navigation = useNavigation();
+
   const handleRegister = (event) => {
     setError("");
     setSuccess("");
@@ -26,18 +29,21 @@ const SignUp = () => {
     const email = form.email.value;
     const password = form.password.value;
     const confirm = form.confirm.value;
+    // validation
     if (password !== confirm) {
       return setError("password dosen't match");
     } else if (password.length < 8) {
       setError("Password must be  8 characters");
       return;
     }
+    // create user
     createUser(email, password)
       .then((result) => {
-        const createdUser = result.user;
-        setUser(createUser);
-        setPic(photo);
-        setName(name);
+        const user = result.user;
+        updateProfile(auth.currentUser, { displayName: name, photoURL: photo })
+          .then(() => {})
+          .catch(() => {});
+        setUser(user);
         navigate(from, { replace: true });
         setSuccess("Account created successfully");
         setError("");

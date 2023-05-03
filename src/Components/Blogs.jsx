@@ -5,6 +5,8 @@ const Blogs = () => {
   const ref = React.createRef();
   return (
     <div className="w-4/5 mb-20 mx-auto text-start">
+      {/* Assignment questions are answered here */}
+
       <div className="mt-10">
         <p className="p-2 text-sm font-medium tracking-wider text-center uppercase">
           How it works

@@ -3,18 +3,10 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../AuthProviders/AuthProvider";
 import "react-tooltip/dist/react-tooltip.css";
 import { Tooltip } from "react-tooltip";
-
+// this is a navbar for small devices
 const SMNavBar = () => {
-  const { user, pic, logOut } = useContext(AuthContext);
-  const handleLogOut = () => {
-    logOut()
-      .then(() => {
-        // Sign-out successful.
-      })
-      .catch((error) => {
-        // An error happened.
-      });
-  };
+  // context
+  const { user, pic } = useContext(AuthContext);
 
   return (
     <nav aria-label="Main Nav" className="flex flex-col ">
