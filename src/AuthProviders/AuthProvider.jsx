@@ -19,6 +19,7 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [pic, setPic] = useState("");
   const [loading, setLoading] = useState(true);
+  const [name, setName] = useState("");
 
   // login with google
 
@@ -80,6 +81,8 @@ const AuthProvider = ({ children }) => {
     loading,
     createUser,
     signIn,
+    setName,
+    name,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

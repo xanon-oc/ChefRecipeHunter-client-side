@@ -1,26 +1,37 @@
-import { Link, useNavigate } from "react-router-dom";
+import {
+  Link,
+  useLocation,
+  useNavigate,
+  useNavigation,
+} from "react-router-dom";
 import ThirdPartyAuth from "./ThirdPartyAuth";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../AuthProviders/AuthProvider";
 
 const Login = () => {
   const { signIn, setUser } = useContext(AuthContext);
-  const navigation = useNavigate();
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+  const navigation = useNavigation();
+  const navigate = useNavigate();
   const handleLogin = (event) => {
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
 
     signIn(email, password)
       .then((result) => {
         const loggedUser = result.user;
         setUser(loggedUser);
+        navigate(from, { replace: true });
+        setError("");
+        setSuccess("Account created successfully");
+        form.reset();
       })
-      .catch((error) => {
-        console.log(error);
-      });
+      .catch((error) => setError(error.message));
   };
   return (
     <div>
@@ -70,6 +81,7 @@ const Login = () => {
                   ></path>
                 </svg>
                 <input
+                  required
                   placeholder="name@mail.com"
                   name="email"
                   type="text"
@@ -105,12 +117,17 @@ const Login = () => {
                   ></path>
                 </svg>
                 <input
+                  required
                   placeholder="Password"
                   name="password"
                   type="password"
                   className="input_field"
                 />
               </div>
+              <p className="text-center">
+                <small className="text-red-600">{error}</small>
+                <small className="text-green-500  ">{success}</small>
+              </p>
               <button className="sign-in_btn">
                 <span>Sign In</span>
               </button>

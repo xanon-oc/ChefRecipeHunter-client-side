@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
+import LazyLoad from "react-lazy-load";
 const ChefSection = () => {
   const [chefData, setChefData] = useState([]);
   useEffect(() => {
@@ -19,11 +19,13 @@ const ChefSection = () => {
             key={cDetails.id}
             className="overflow-hidden rounded-lg border border-gray-100 bg-white shadow-sm "
           >
-            <img
-              alt="Office"
-              src={cDetails.picture_link}
-              className="h-56 w-full object-cover object-top "
-            />
+            <LazyLoad>
+              <img
+                alt="Office"
+                src={cDetails.picture_link}
+                className="h-56 w-full object-cover object-top "
+              />
+            </LazyLoad>
 
             <div className="p-4 sm:p-6">
               <a href="#">

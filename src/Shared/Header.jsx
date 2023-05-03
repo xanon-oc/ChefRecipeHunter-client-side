@@ -7,7 +7,9 @@ import { AuthContext } from "../AuthProviders/AuthProvider";
 import SMNavBar from "../Components/SMNavBar";
 
 const Header = () => {
-  const { user, logOut, pic } = useContext(AuthContext);
+  const { user, logOut, pic, name } = useContext(AuthContext);
+  console.log(name);
+  console.log(pic);
   const [visible, setVisible] = useState(false);
   const handleLogOut = () => {
     logOut()
@@ -96,7 +98,13 @@ const Header = () => {
                         <div>
                           <img
                             data-tooltip-id="my-tooltip"
-                            data-tooltip-content={user.displayName}
+                            data-tooltip-content={
+                              user.displayName === "" ? (
+                                <p>{name}</p>
+                              ) : (
+                                <div>{user.displayName}</div>
+                              )
+                            }
                             src={pic}
                             className="w-10 h-10 rounded-full"
                             alt=""

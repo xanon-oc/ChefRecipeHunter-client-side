@@ -2,6 +2,7 @@ import { Rating } from "@smastrom/react-rating";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import LazyLoad from "react-lazy-load";
 
 const RecipeCard = ({ dish }) => {
   const { recipe_name, ingredients, recipe_pic, cooking_method, rating, id } =
@@ -38,11 +39,13 @@ const RecipeCard = ({ dish }) => {
   return (
     <div className="">
       <article className="overflow-hidden rounded-lg shadow transition hover:shadow-lg">
-        <img
-          alt="Office"
-          src={recipe_pic}
-          className="h-56 w-full object-cover"
-        />
+        <LazyLoad>
+          <img
+            alt="Office"
+            src={recipe_pic}
+            className="h-56 w-full object-cover"
+          />
+        </LazyLoad>
 
         <div className="bg-white p-4 sm:p-6">
           <a className="flex items-center justify-between" href="#">

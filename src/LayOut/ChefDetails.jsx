@@ -3,7 +3,7 @@ import { useLoaderData, useNavigation } from "react-router-dom";
 import Header from "../Shared/Header";
 import Footer from "../Shared/Footer";
 import RecipeCard from "../Components/RecipeCard";
-
+import LazyLoad from "react-lazy-load";
 const ChefDetails = () => {
   const navigation = useNavigation();
   const ChefDetails = useLoaderData();
@@ -35,11 +35,13 @@ const ChefDetails = () => {
             <div>
               <div className="text-center">
                 <div className="flex justify-center mt-8">
-                  <img
-                    className="rounded-full w-36 h-36 object-cover"
-                    src={picture_link}
-                    alt=""
-                  />
+                  <LazyLoad>
+                    <img
+                      className="rounded-full w-36 h-36 object-cover"
+                      src={picture_link}
+                      alt=""
+                    />
+                  </LazyLoad>
                 </div>
                 <div className="mt-4 md:w-1/2 lg:w-1/2 w-[80%] flex flex-col mx-auto ">
                   <h2 className="uppercase animate-text bg-gradient-to-r from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-3xl font-black text-transparent mb-4">
