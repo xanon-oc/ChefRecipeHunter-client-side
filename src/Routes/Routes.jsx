@@ -8,6 +8,7 @@ import Blogs from "../Components/Blogs";
 import Contact from "../Components/Contact";
 import ErrorShow from "../Components/ErrorShow";
 import SecureRoutes from "./secureRoutes";
+import Profile from "../Components/Profile";
 // routes
 const router = createBrowserRouter([
   {
@@ -30,6 +31,14 @@ const router = createBrowserRouter([
       {
         path: "/blogs",
         element: <Blogs />,
+      },
+      {
+        path: "/profile",
+        element: (
+          <SecureRoutes>
+            <Profile />
+          </SecureRoutes>
+        ),
       },
       {
         path: "/contact",

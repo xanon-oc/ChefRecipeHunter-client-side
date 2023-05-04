@@ -108,23 +108,27 @@ const SMNavBar = () => {
           <div className="flex items-center gap-4">
             {pic === false ? (
               <div>
-                <img
-                  data-tooltip-id="my-tooltip"
-                  data-tooltip-content={user?.displayName}
-                  src={pic}
-                  className="w-10 h-10 rounded-full"
-                  alt=""
-                />
+                <Link to="/profile">
+                  <img
+                    data-tooltip-id="my-tooltip"
+                    data-tooltip-content={user?.displayName}
+                    src={pic}
+                    className="w-10 h-10 rounded-full"
+                    alt=""
+                  />
+                </Link>
               </div>
             ) : (
               <div className="flex gap-2 p-4 items-center">
-                <img
-                  data-tooltip-id="my-tooltip"
-                  data-tooltip-content={user?.displayName}
-                  src={user?.photoURL}
-                  className="w-10 h-10 rounded-full"
-                  alt=""
-                />
+                <Link to="/profile">
+                  <img
+                    data-tooltip-id="my-tooltip"
+                    data-tooltip-content={user?.displayName}
+                    src={user?.photoURL}
+                    className="w-10 h-10 rounded-full"
+                    alt=""
+                  />
+                </Link>
                 <div>
                   <p>{user?.displayName}</p>
                 </div>

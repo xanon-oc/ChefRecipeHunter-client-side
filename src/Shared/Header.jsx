@@ -52,6 +52,16 @@ const Header = () => {
                     Blog
                   </NavLink>
                 </li>
+                {user && (
+                  <li>
+                    <NavLink
+                      className="text-gray-500 transition hover:text-gray-500/75"
+                      to="/profile"
+                    >
+                      Profile
+                    </NavLink>
+                  </li>
+                )}
                 <li>
                   <NavLink
                     className="text-gray-500 transition hover:text-gray-500/75"
@@ -91,13 +101,15 @@ const Header = () => {
                   <div className="flex gap-2 items-center">
                     <div className="flex items-center gap-4">
                       <div>
-                        <img
-                          data-tooltip-id="my-tooltip"
-                          data-tooltip-content={user.displayName}
-                          src={user.photoURL}
-                          className="w-10 h-10 rounded-full"
-                          alt=""
-                        />
+                        <Link to="/profile">
+                          <img
+                            data-tooltip-id="my-tooltip"
+                            data-tooltip-content={user.displayName}
+                            src={user.photoURL}
+                            className="w-10 h-10 rounded-full"
+                            alt=""
+                          />
+                        </Link>
                       </div>
                       <Tooltip id="my-tooltip" />
                     </div>
