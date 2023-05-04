@@ -5,6 +5,8 @@ import {
   createUserWithEmailAndPassword,
   getAuth,
   onAuthStateChanged,
+  sendEmailVerification,
+  sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
@@ -50,6 +52,18 @@ const AuthProvider = ({ children }) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
 
+  // sen email verification
+
+  const emailSendToV = () => {
+    return sendEmailVerification(auth.currentUser);
+  };
+
+  // password handle email
+
+  const passwordChangeEmail = () => {
+    return sendPasswordResetEmail(auth, user.email);
+  };
+
   // onAuth
 
   useEffect(() => {
@@ -79,6 +93,8 @@ const AuthProvider = ({ children }) => {
     loading,
     createUser,
     signIn,
+    emailSendToV,
+    passwordChangeEmail,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
