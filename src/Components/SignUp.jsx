@@ -11,7 +11,7 @@ import { getAuth, updateProfile } from "firebase/auth";
 const auth = getAuth();
 const SignUp = () => {
   // states and hooks
-  const { createUser, setUser } = useContext(AuthContext);
+  const { createUser, setUser, logOut } = useContext(AuthContext);
   const location = useLocation();
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
@@ -44,9 +44,13 @@ const SignUp = () => {
           .then(() => {})
           .catch(() => {});
         setUser(user);
-        navigate(from, { replace: true });
+        logOut()
+          .then(() => {})
+          .catch(() => {});
+        navigate("/login");
         setSuccess("Account created successfully");
         setError("");
+
         form.reset("");
       })
       .catch((error) => {
