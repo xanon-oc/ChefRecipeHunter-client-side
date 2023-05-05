@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../AuthProviders/AuthProvider";
 import { getAuth, updateProfile } from "firebase/auth";
 
@@ -133,7 +133,7 @@ const Profile = () => {
               }}
               className="rounded-full  hover:bg-[#EB4A36] px-5 py-2.5 text-sm font-medium hover:text-white shadow hover:shadow-lg transition "
             >
-              R'PASSWORD
+              R&apos;PASSWORD
             </button>
           </div>
         </div>

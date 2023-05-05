@@ -47,20 +47,20 @@ const Blogs = () => {
             <p className="text-sm leading-6">
               In React, a form input component can be either controlled or
               uncontrolled. The main difference between the two is how the
-              component's data is managed. A controlled component is one where
-              the value of the input is controlled by React. This means that the
-              component's value is tied to a piece of state, and the value can
-              only be updated by updating that state. When the user interacts
-              with the input, React updates the state and re-renders the
-              component with the new value. This approach gives the developer
-              more control over the data and makes it easier to perform data
-              validation and enforce data constraints. An uncontrolled
-              component, on the other hand, is one where the value of the input
-              is managed by the DOM. The developer can still attach event
-              handlers to the input, but the value is not tied to a piece of
-              state. This approach can be simpler to implement, but it makes it
-              harder to perform data validation and enforce data constraints. In
-              summary, controlled components give the developer more control
+              component&apos;s data is managed. A controlled component is one
+              where the value of the input is controlled by React. This means
+              that the component&apos;s value is tied to a piece of state, and
+              the value can only be updated by updating that state. When the
+              user interacts with the input, React updates the state and
+              re-renders the component with the new value. This approach gives
+              the developer more control over the data and makes it easier to
+              perform data validation and enforce data constraints. An
+              uncontrolled component, on the other hand, is one where the value
+              of the input is managed by the DOM. The developer can still attach
+              event handlers to the input, but the value is not tied to a piece
+              of state. This approach can be simpler to implement, but it makes
+              it harder to perform data validation and enforce data constraints.
+              In summary, controlled components give the developer more control
               over the data, while uncontrolled components can be simpler to
               implement but make it harder to perform data validation and
               enforce data constraints.
@@ -95,15 +95,15 @@ const Blogs = () => {
             <p className="text-sm leading-6">
               Node.js and Express.js are both popular technologies used in
               building web applications, but they serve different purposes.
-              Node.js is a JavaScript runtime built on Chrome's V8 JavaScript
-              engine that allows developers to run JavaScript code outside of a
-              browser environment. Node.js provides a set of built-in modules
-              and APIs for handling input/output operations, file system
-              operations, networking, and more. Node.js is often used for
-              building server-side applications, command-line tools, and
-              real-time applications. Express.js, on the other hand, is a web
-              application framework built on top of Node.js. It provides a set
-              of tools and features for building web applications, such as
+              Node.js is a JavaScript runtime built on Chrome&apos;s V8
+              JavaScript engine that allows developers to run JavaScript code
+              outside of a browser environment. Node.js provides a set of
+              built-in modules and APIs for handling input/output operations,
+              file system operations, networking, and more. Node.js is often
+              used for building server-side applications, command-line tools,
+              and real-time applications. Express.js, on the other hand, is a
+              web application framework built on top of Node.js. It provides a
+              set of tools and features for building web applications, such as
               routing, middleware, templates, and more. Express.js simplifies
               the process of building web applications and makes it easier to
               handle HTTP requests, responses, and server-side logic. In
@@ -129,16 +129,16 @@ const Blogs = () => {
               typically use the built-in React hooks like useState, useEffect,
               useContext, and useReducer, and they can also use other custom
               hooks. By following the naming convention, you can create a custom
-              hook by prefixing the function name with the word 'use.' You might
-              create a custom hook to extract and reuse a piece of logic that is
-              used in multiple components, or when you need to encapsulate
-              complex behavior in a reusable function. Custom hooks can also
-              help you abstract away implementation details and make your code
-              more modular and testable. For example, you might create a custom
-              hook to handle form input validation, data fetching, or animation
-              behavior. By creating a custom hook, you can make the logic
-              reusable across different components without duplicating code or
-              creating tight coupling between components.
+              hook by prefixing the function name with the word &apos;use.&apos;
+              You might create a custom hook to extract and reuse a piece of
+              logic that is used in multiple components, or when you need to
+              encapsulate complex behavior in a reusable function. Custom hooks
+              can also help you abstract away implementation details and make
+              your code more modular and testable. For example, you might create
+              a custom hook to handle form input validation, data fetching, or
+              animation behavior. By creating a custom hook, you can make the
+              logic reusable across different components without duplicating
+              code or creating tight coupling between components.
             </p>
           </div>
         </section>

@@ -48,7 +48,6 @@ const SignUp = () => {
           .then(() => {})
           .catch(() => {});
         navigate("/login");
-        console.log(user);
         setSuccess("Account created successfully");
         setError("");
 

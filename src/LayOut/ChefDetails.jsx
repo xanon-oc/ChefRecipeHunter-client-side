@@ -1,4 +1,3 @@
-import React, { useContext } from "react";
 import { Link, useLoaderData, useNavigation } from "react-router-dom";
 import Header from "../Shared/Header";
 import Footer from "../Shared/Footer";
@@ -55,8 +54,8 @@ const ChefDetails = () => {
                     <span className="ml-1 mr-1 uppercase animate-text bg-gradient-to-r from-teal-500 via-purple-500 to-orange-500 bg-clip-text  font-black text-transparent">
                       {name}
                     </span>
-                    and I'm i Indian Master Chef. Here is some information about
-                    me.
+                    and I&apos;m i Indian Master Chef. Here is some information
+                    about me.
                     {bio_description}
                   </p>
                 </div>

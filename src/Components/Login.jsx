@@ -142,7 +142,7 @@ const Login = () => {
               </div>
               <ThirdPartyAuth />
               <p className="note">
-                Don't have a account ? <Link to="/signUp">Sign Up </Link>
+                Don&apos;t have a account ? <Link to="/signUp">Sign Up </Link>
               </p>
             </form>
           </div>

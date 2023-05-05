@@ -53,9 +53,7 @@ const RecipeCard = ({ dish }) => {
           <p className="text-sm font-medium">ingredients :</p>
           <p className="mt-2 line-clamp-3 text-sm/relaxed text-gray-500 grid grid-cols-2">
             {ingredients.map((ingredient) => (
-              <span key={ingredient.id}>
-                <li>{`${ingredient}`} .</li>
-              </span>
+              <li key={ingredient.id}>{`${ingredient}`} .</li>
             ))}
           </p>
           <p className="mt-2 line-clamp-6 text-sm/relaxed text-gray-500">

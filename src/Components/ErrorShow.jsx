@@ -1,5 +1,3 @@
-import React from "react";
-
 const ErrorShow = () => {
   return (
     <div className="grid h-screen px-4 bg-white place-content-center">
@@ -28,7 +26,7 @@ const ErrorShow = () => {
           Uh-oh!
         </h1>
 
-        <p className="mt-4 text-gray-500">We can't find that page.</p>
+        <p className="mt-4 text-gray-500">We can&apos;t find that page.</p>
       </div>
     </div>
   );
