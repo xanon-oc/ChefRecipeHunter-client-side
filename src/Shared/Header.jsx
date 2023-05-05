@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import logo from "../../public/default-monochrome.svg";
+import logo from "/default-monochrome.svg";
 import "react-tooltip/dist/react-tooltip.css";
 import { Tooltip } from "react-tooltip";
 import { Link, NavLink } from "react-router-dom";
@@ -28,7 +28,7 @@ const Header = () => {
         <div className="flex h-16 items-center justify-between">
           <div className="md:flex md:items-center md:gap-12">
             <Link to="/">
-              <img src={logo} className="w-[50%]" alt="" />
+              <img src={logo} className="h-[50%] w-[50%] " alt="" />
             </Link>
           </div>
 

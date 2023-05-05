@@ -45,7 +45,7 @@ const RecipeCard = ({ dish }) => {
           <a className="flex items-center justify-between" href="#">
             <h3 className="mt-0.5 text-lg text-gray-900">{recipe_name}</h3>
             <p className="flex items-center gap-4 text-sm">
-              <Rating value={rating} readOnly className=" h-4" />
+              <Rating value={rating} readOnly className=" h-4 z-10" />
               {rating}
             </p>
           </a>

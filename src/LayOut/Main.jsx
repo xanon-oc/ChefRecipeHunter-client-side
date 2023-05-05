@@ -7,7 +7,7 @@ const Main = () => {
   const navigation = useNavigation();
   return (
     <div>
-      <div className="sticky top-0">
+      <div className="sticky top-0 z-50">
         <Header />
       </div>
       <div>
