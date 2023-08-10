@@ -3,7 +3,7 @@ function Gallery() {
   return (
     <div>
       {/* this is the food gallery section */}
-      <h2 className="text-center mb-14 mt-20 font-extrabold text-5xl">
+      <h2 className="text-center mb-14 text-xl font-bold tracking-tight">
         Food Gallery
       </h2>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
